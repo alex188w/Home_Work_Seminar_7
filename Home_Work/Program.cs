@@ -31,9 +31,9 @@ void Zadacha50()
 
     Console.WriteLine("Введите номер строки нужного элемента ");
     int m = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("Введите номер столбца нужного ");
+    Console.WriteLine("Введите номер столбца нужного элемента");
     int n = Convert.ToInt32(Console.ReadLine());
-    if((m-1) >= rows || (n-1) >= colums) Console.WriteLine("Такого элемента нет в массиве ");
+    if((m-1) >= rows || m <= 0 || (n-1) >= colums || n <= 0 ) Console.WriteLine("Такого элемента нет в массиве ");
     else Console.WriteLine("Значение данного элемента: " + array[m-1, n-1]);
 }
 
@@ -48,7 +48,7 @@ void Zadacha52()
     FillArray(array, 0, 10);
     Console.WriteLine("Заданный массив ");
     PrintArray(array);
-
+    Console.WriteLine("Среднее арифметическое столбцов элементов массива равно ");
     for (int j = 0; j < colums; j++) 
     {
         double sum = 0;
@@ -56,8 +56,10 @@ void Zadacha52()
         {
             sum = sum + array[i, j];   
         }
-        Console.WriteLine("Среднее арифметическое элементов " + j + " - го столбца равна " + Math.Round(sum/rows, 1));
+        
+        Console.Write(Math.Round(sum/rows, 1) + "\t");
     }
+    Console.WriteLine();
 }
 
 void FillArrayDouble(double[,] array) 
